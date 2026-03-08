@@ -43,7 +43,7 @@ npm run dev
 - Navigating back/forward preserves selected answers
 - Answers are cleared only when the user clicks "Start Over" on the summary page
 
-**Nice-to-haves**
+**Nice-to-have**
 
 - Fake loading page at `/[brand]/quiz/loading` (3 second delay)
 - Summary page at `/[brand]/quiz/summary` showing all answers with labels

@@ -18,7 +18,6 @@ const QuestionPage = async ({ params }: PageProps<'/[brand]/quiz/[id]'>) => {
       quiz={quiz}
       brand={brand}
       brandName={brandData.name ?? 'Quiz App'}
-      logoSrc={brandData.images.logo ?? null}
     />
   );
 };

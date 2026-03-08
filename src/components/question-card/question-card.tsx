@@ -15,10 +15,9 @@ type Props = {
   question: Question;
   brand: string;
   brandName: string;
-  logoSrc: string | null;
 };
 
-export const QuestionCard = ({ quiz, question, brand, brandName, logoSrc }: Props) => {
+export const QuestionCard = ({ quiz, question, brand, brandName }: Props) => {
   const router = useRouter();
   const { answers, setAnswer, clearAnswer, isHydrated } = useQuiz(brand);
   const visibleQuestions = getVisibleQuestions(quiz.questions, answers);
@@ -76,23 +75,10 @@ export const QuestionCard = ({ quiz, question, brand, brandName, logoSrc }: Prop
 
         <button
           onClick={() => router.push(`/${brand}`)}
-          className="flex items-center justify-center cursor-pointer"
+          className="flex items-center justify-center cursor-pointer font-bold text-[var(--brand-primary)] text-base md:text-lg"
           aria-label="Go to home page"
         >
-          {logoSrc ? (
-            <Image
-              src={logoSrc}
-              alt={brandName}
-              width={128}
-              height={36}
-              className="h-7 md:h-9 w-auto object-contain"
-              priority
-            />
-          ) : (
-            <span className="font-bold text-[var(--brand-primary)] text-base md:text-lg">
-              {brandName}
-            </span>
-          )}
+          {brandName}
         </button>
 
         <span className="text-sm md:text-base opacity-60 tabular-nums">
