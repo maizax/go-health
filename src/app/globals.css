@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+/* Brand themes via data-brand attribute on the root wrapper.
+   To add a new brand: add a new [data-brand="your-id"] block. */
+
+[data-brand='brand-a'] {
+  --brand-primary: slateblue;
+  --brand-primary-hover: darkslateblue;
+  --brand-secondary: lavender;
+  --brand-text: midnightblue;
+  --brand-bg: white;
+  --brand-card-bg: ghostwhite;
+  --brand-border: lightsteelblue;
+}
+
+[data-brand='brand-b'] {
+  --brand-primary: mediumseagreen;
+  --brand-primary-hover: seagreen;
+  --brand-secondary: honeydew;
+  --brand-text: darkgreen;
+  --brand-bg: mintcream;
+  --brand-card-bg: mintcream;
+  --brand-border: mediumaquamarine;
+}

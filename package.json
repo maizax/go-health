@@ -1,12 +1,15 @@
 {
   "name": "go-health",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"npm run mock-server\"",
+    "mock-server": "json-server --watch mock-db.json --port 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier --write . && eslint --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -18,9 +21,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "json-server": "^0.17.4",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }

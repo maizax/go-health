@@ -1,0 +1,164 @@
+{
+  "brands": [
+    {
+      "id": "brand-a",
+      "name": "WeightLoss Co",
+      "images": {
+        "hero": "/images/brand-a/hero.svg",
+        "completion": "/images/brand-a/completion.svg"
+      },
+      "landing": {
+        "headline": "Achieve Your Weight Goals",
+        "subheadline": "Take our quick quiz to get your personalized plan",
+        "ctaLabel": "Start the Quiz"
+      }
+    },
+    {
+      "id": "brand-b",
+      "name": "FitLife",
+      "images": {
+        "hero": "/images/brand-b/hero.svg",
+        "completion": "/images/brand-b/completion.svg"
+      },
+      "landing": {
+        "headline": "Transform Your Fitness",
+        "subheadline": "Answer a few questions to find your perfect routine",
+        "ctaLabel": "Begin Quiz"
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-weight-loss",
+      "brand": "brand-a",
+      "quizId": "weight-loss",
+      "title": "Weight Loss Quiz",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "text": "What is your goal?",
+          "options": [
+            {
+              "value": "lose_weight",
+              "label": "Lose weight"
+            },
+            {
+              "value": "improve_energy",
+              "label": "Improve energy"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "number",
+          "text": "How many hours do you sleep per night?",
+          "visibleIf": [
+            {
+              "questionId": "q1",
+              "equals": "improve_energy"
+            }
+          ],
+          "validation": {
+            "min": 0,
+            "max": 12
+          }
+        },
+        {
+          "id": "q3",
+          "type": "single_choice",
+          "text": "Preferred plan length?",
+          "options": [
+            {
+              "value": "short",
+              "label": "2–4 weeks"
+            },
+            {
+              "value": "long",
+              "label": "8–12 weeks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiz-fitness",
+      "brand": "brand-b",
+      "quizId": "fitness",
+      "title": "Fitness Quiz",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "text": "What is your fitness level?",
+          "options": [
+            {
+              "value": "beginner",
+              "label": "Beginner"
+            },
+            {
+              "value": "intermediate",
+              "label": "Intermediate"
+            },
+            {
+              "value": "advanced",
+              "label": "Advanced"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "number",
+          "text": "How many days per week can you train?",
+          "visibleIf": [
+            {
+              "questionId": "q1",
+              "equals": "advanced"
+            }
+          ],
+          "validation": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        {
+          "id": "q3",
+          "type": "single_choice",
+          "text": "What is your main focus?",
+          "options": [
+            {
+              "value": "strength",
+              "label": "Strength"
+            },
+            {
+              "value": "cardio",
+              "label": "Cardio"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "submissions": [
+    {
+      "brand": "brand-a",
+      "answers": {
+        "q1": "improve_energy",
+        "q2": 0,
+        "q3": "short"
+      },
+      "completedAt": "2026-03-08T13:15:27.141Z",
+      "id": 1
+    },
+    {
+      "brand": "brand-b",
+      "answers": {
+        "q1": "advanced",
+        "q2": 2,
+        "q3": "cardio"
+      },
+      "completedAt": "2026-03-08T13:15:45.031Z",
+      "id": 2
+    }
+  ]
+}
